@@ -45,20 +45,56 @@
         <header class="masthead" id="home">
             <div class="container">                
                 <div class="masthead-subheading">Seja bem-vindo NOMEFUNCIONARIO!</br></br>
-                    <h4>Você pode usar esta página para cadastrar e configurar seu Cemsys</h4>
                 </div>
             </div>
         </header>
-        <h1>Hello World!</h1>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
             <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Menu Principal</h2>
+                    <h3 class="section-subheading text-muted">Neste menu você pode efetuar cadastros e configurar seu Cemsys.</h3>
+                </div>
                 <div class="row">
-                    <div class="col">col</div>
-                    <div class="col">col</div>
-                    <div class="w-100"></div>
-                    <div class="col">col</div>
-                    <div class="col">col</div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Falecidos</div>
+                                <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar falecidos</div></br>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Setores</div>
+                                <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar setores</div></br>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Quadras</div>
+                                <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar quadras</div></br>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Lotes</div>
+                                <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar lotes</div></br>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
