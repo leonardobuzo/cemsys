@@ -61,7 +61,8 @@
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Falecidos</div>
                                 <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar falecidos</div></br>
-                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                                <a class="portfolio-link btn btn-dark" href="cadastrar-falecido.jsp">Cadastrar</a></br>
+                                    <a class="portfolio-link btn btn-dark" href="listar-falecido.jsp">Gerenciar</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +71,8 @@
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Setores</div>
                                 <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar setores</div></br>
-                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-setor.jsp">Cadastrar</a></br>
+                                    <a class="portfolio-link btn btn-dark" href="listar-setor.jsp">Gerenciar</a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +81,8 @@
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Quadras</div>
                                 <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar quadras</div></br>
-                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-quadra.jsp">Cadastrar</a></br>
+                                    <a class="portfolio-link btn btn-dark" href="listar-quadra.jsp">Gerenciar</a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +91,8 @@
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Lotes</div>
                                 <div class="portfolio-caption-subheading text-muted">Cadastrar e consultar lotes</div></br>
-                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Acessar</a>
+                                    <a class="portfolio-link btn btn-dark" href="cadastrar-lote.jsp">Cadastrar</a></br>
+                                    <a class="portfolio-link btn btn-dark" href="listar-lote.jsp">Gerenciar</a>
                             </div>
                         </div>
                     </div>

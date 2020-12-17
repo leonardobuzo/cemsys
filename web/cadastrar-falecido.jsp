@@ -23,7 +23,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="bootstrap/css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -47,28 +47,60 @@
     <body>
         <section>
             <form>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Nome Completo</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Senha</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nome Completo</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+                    <label for="inputAddress">Endereço</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select de exemplo</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <label for="inputAddress2">Endereço 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputEstado">Setor</label>
+                        <select id="inputEstado" class="form-control">
+                            <option selected>Escolher...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputEstado">Quadra</label>
+                        <select id="inputEstado" class="form-control">
+                            <option selected>Escolher...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputEstado">Lote</label>
+                        <select id="inputEstado" class="form-control">
+                            <option selected>Escolher...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Insira a foto do falecido</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Clique em mim
+                        </label>
+                    </div>
                 </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
         </section>
         <!-- Footer-->
@@ -118,7 +150,7 @@
                 </div>
             </div>
         </div>
-
+    </body>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -129,5 +161,5 @@
         <script src="bootstrap/assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="bootstrap/js/scripts.js"></script>
-    </body>
+    
 </html>
