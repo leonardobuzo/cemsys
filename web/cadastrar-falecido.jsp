@@ -23,85 +23,88 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="bootstrap/css/styles.css" rel="stylesheet" />
     </head>
-    
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><!--<img width="200" height="300" class="d-inline-block align-top" src="bootstrap/assets/img/logos/cemsys.png" alt="" />-->CEMSYS</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                        <!--<li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>-->
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="index.jsp">Página de Visitantes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="index.jsp">Contato com suporte</a></li>
-                    </ul>
-                </div>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><!--<img width="200" height="300" class="d-inline-block align-top" src="bootstrap/assets/img/logos/cemsys.png" alt="" />-->CEMSYS</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <!--<li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>-->
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="index.jsp">Página de Visitantes</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" href="index.jsp">Contato com suporte</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
     <body>
         <section>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Senha</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress">Endereço</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Endereço 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputEstado">Setor</label>
-                        <select id="inputEstado" class="form-control">
-                            <option selected>Escolher...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputEstado">Quadra</label>
-                        <select id="inputEstado" class="form-control">
-                            <option selected>Escolher...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputEstado">Lote</label>
-                        <select id="inputEstado" class="form-control">
-                            <option selected>Escolher...</option>
-                            <option>...</option>
-                        </select>
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Cadastro de Falecidos</h2>
+                <h5 class="section-subheading">Utilize o formulário abaixo para cadastrar um novo falecido.</h5>
+            </div></br>
+            <div class="row justify-content-center pt-0 mb-5 pb-1">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nome</label>
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="inputPassword4">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Insira a foto do falecido</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label for="inputAddress">Data de Falecimento</label>
+                        <input type="date" class="form-control" id="inputAddress">
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Clique em mim
-                        </label>
+                    <div class="form-group">
+                        <label for="inputAddress2">Endereço</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rua, numero e bairro">
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEstado">Setor</label>
+                            <select id="inputEstado" class="form-control">
+                                <option selected>Escolher...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEstado">Quadra</label>
+                            <select id="inputEstado" class="form-control">
+                                <option selected>Escolher...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEstado">Lote</label>
+                            <select id="inputEstado" class="form-control">
+                                <option selected>Escolher...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Insira a foto do falecido</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Mensagem de familiares</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Cadastrar</button>
+                    <button type="button" class="btn btn-danger"><a href="menu-funcionario.jsp">Voltar</a></button>
+                </form>
+            </div>
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
@@ -151,15 +154,15 @@
             </div>
         </div>
     </body>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="bootstrap/assets/mail/jqBootstrapValidation.js"></script>
-        <script src="bootstrap/assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="bootstrap/js/scripts.js"></script>
-    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="bootstrap/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="bootstrap/assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="bootstrap/js/scripts.js"></script>
+
 </html>
