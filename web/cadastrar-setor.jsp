@@ -49,30 +49,32 @@
             <div class="text-center pb-0"><br/>
                 <h2 class="section-heading text-uppercase">Cadastro de Setor</h2>
                 <h5 class="section-subheading">Utilize o formulário abaixo para cadastrar um novo setor.</h5>
-                <p>Setor é responsável por abrigar as quadras e os lotes.</p>
+                <p>O setor é responsável por abrigar as quadras e os lotes.</p>
             </div>
+            <div class="row justify-content-center pt-0 mb-4 pb-0">
                 <form>
                     <div class="form-group col-md-6">
-                        <label for="inputAddress2">Novo setor</label>
+                        <label for="inputAddress2"><strong>Novo setor</strong></label>
                         <input type="text" class="form-control" id="inputAddress2">
                     </div>
                     </br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>
                     <button type="button" class="btn btn-danger"><a href="menu-funcionario.jsp">Voltar</a></button>
                 </form>
+            </div>
         </section>
         <!-- Footer-->
-        <footer class="footer py-4">
+        <footer class="footer py-4 bg-dark">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright© Erivelton Rossini - Leonardo Buzo</div>
+                    <div class="col-lg-4 text-lg-left text-light">Copyright© Erivelton Rossini - Leonardo Buzo</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <div class="mr-3">Todos os direitos reservados - 2020</div>
+                        <div class="mr-3 text-light">Todos os direitos reservados - 2020</div>
                     </div>
                 </div>
             </div>

@@ -135,17 +135,17 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer py-4">
+        <footer class="footer py-4 bg-dark">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright© Erivelton Rossini - Leonardo Buzo</div>
+                    <div class="col-lg-4 text-lg-left text-light">Copyright© Erivelton Rossini - Leonardo Buzo</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <div class="mr-3">Todos os direitos reservados - 2020</div>
+                        <div class="mr-3 text-light">Todos os direitos reservados - 2020</div>
                     </div>
                 </div>
             </div>

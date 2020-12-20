@@ -53,7 +53,7 @@
       </div>
         <!--Login-->
       <div class="main">
-         <div class="col-md-6 col-sm-12">
+         <div class="col-md-6 col-sm-6">
             <div class="login-form">
                <form>
                   <div class="form-group">
