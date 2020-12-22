@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputAddress2"><strong>Nova quadra</strong></label>
-                            <input type="text" class="form-control" id="inputAddress2">
+                            <input type="text" class="form-control text-uppercase" id="inputAddress2">
                         </div>
                     </div></br>
                     </br>

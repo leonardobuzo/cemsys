@@ -55,7 +55,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nome</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+                            <input type="text" class="form-control text-uppercase" id="inputEmail4" placeholder="Nome Completo">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Data de Nascimento</label>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Endereço</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Rua, numero e bairro">
+                        <input type="text" class="form-control text-uppercase" id="inputAddress2" placeholder="Rua, numero e bairro">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">

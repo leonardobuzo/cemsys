@@ -56,11 +56,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nome</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+                            <input type="text" class="form-control text-uppercase" id="inputEmail4" placeholder="Nome Completo">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">E-Mail</label>
-                            <input type="email" class="form-control" id="inputPassword4">
+                            <input type="email" class="form-control text-uppercase" id="inputPassword4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Senha</label>

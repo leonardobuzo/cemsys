@@ -55,7 +55,7 @@
                 <form>
                     <div class="form-group col-md-6">
                         <label for="inputAddress2"><strong>Novo setor</strong></label>
-                        <input type="text" class="form-control" id="inputAddress2">
+                        <input type="text" class="form-control text-uppercase" id="inputAddress2">
                     </div>
                     </br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

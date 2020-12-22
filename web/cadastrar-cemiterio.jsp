@@ -55,26 +55,26 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Nome do Cemitério</label>
-                            <input type="text" class="form-control" id="inputEmail4">
+                            <input type="text" class="form-control text-uppercase" id="inputEmail4">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Endereço</label>
-                            <input type="text" class="form-control" id="inputPassword4"  placeholder="Nome da rua">
+                            <input type="text" class="form-control text-uppercase" id="inputPassword4"  placeholder="Nome da rua">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="inputAddress">Numero</label>
-                            <input type="text" class="form-control" id="inputAddress">
+                            <input type="text" class="form-control text-uppercase" id="inputAddress">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputAddress2">Bairro</label>
-                            <input type="text" class="form-control" id="inputAddress2">
+                            <input type="text" class="form-control text-uppercase" id="inputAddress2">
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputAddress2">Cidade</label>
-                            <input type="text" class="form-control" id="inputAddress2">
+                            <input type="text" class="form-control text-uppercase" id="inputAddress2">
                         </div>
                     </div>
                     
