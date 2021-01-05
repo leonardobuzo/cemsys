@@ -28,6 +28,9 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="bootstrap/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
 
     <!-- Navigation-->
@@ -80,8 +83,8 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <th><a class="btn btn-primary py-2 px-2" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="false">Alterar</span></a>
-                                <a class="btn btn-primary py-2 px-2" href=""><span class="glyphicon glyphicon-trash" aria-hidden="false">Excluir</span></a></th>
+                            <th><a class="btn btn-primary py-2 px-2" href="">Alterar <i class="fa fa-plus-square"></i></a>
+                                <a class="btn btn-primary py-2 px-2" href="">Excluir <i class='fas fa-trash-alt'></i></a></th>
                         </tr>
                     </tbody>
                 </table>
