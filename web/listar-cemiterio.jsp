@@ -83,8 +83,8 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <th><a class="btn btn-primary py-2 px-2" href="">Alterar <i class="fa fa-plus-square"></i></a>
-                                <a class="btn btn-primary py-2 px-2" href="">Excluir <i class='fas fa-trash-alt'></i></a></th>
+                            <th><a class="btn btn-primary py-2 px-2" href="">ALTERAR <i class="fa fa-plus-square"></i></a>
+                                <a class="btn btn-primary py-2 px-2" href="">EXCLUIR <i class='fas fa-trash-alt'></i></a></th>
                         </tr>
                     </tbody>
                 </table>
