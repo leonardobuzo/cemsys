@@ -74,8 +74,10 @@
                     <thead>
                         <tr>
                             <th scope="col px-5">Código</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Último</th>
+                            <th scope="col">Falecido</th>
+                            <th scope="col">Setor</th>
+                            <th scope="col">Quadra</th>
+                            <th scope="col">Lote</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,8 +85,10 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <th><a class="btn btn-primary py-2 px-2" href="">ALTERAR <i class="fa fa-plus-square"></i></a>
-                                <a class="btn btn-primary py-2 px-2" href="">EXCLUIR <i class='fas fa-trash-alt'></i></a></th>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <th><a class="btn btn-primary py-2 px-2" href="">FUNCIONARIOS <i class="fa fa-plus-square"></i></a>
+                                <a class="btn btn-primary py-2 px-2" href="">FALECIDOS <i class='fas fa-trash-alt'></i></a></th>
                         </tr>
                     </tbody>
                 </table>

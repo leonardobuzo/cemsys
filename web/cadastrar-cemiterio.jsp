@@ -73,8 +73,10 @@
                             <input type="text" class="form-control text-uppercase" id="inputAddress2">
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="inputAddress2">Cidade</label>
-                            <input type="text" class="form-control text-uppercase" id="inputAddress2">
+                             <label for="inputEstado">Cidade</label>
+                            <select id="inputEstado" class="form-control custom-select">
+                                <option selected>...</option>
+                            </select>
                         </div>
                     </div>
                     

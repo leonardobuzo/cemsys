@@ -53,18 +53,18 @@
             <div class="row justify-content-center pt-0 mb-5 pb-1">
                 <form>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
                             <label for="inputEmail4">Nome</label>
                             <input type="text" class="form-control text-uppercase" id="inputEmail4" placeholder="Nome Completo">
-                        </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Data de Nascimento</label>
                             <input type="date" class="form-control" id="inputPassword4">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Data de Falecimento</label>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Data de Falecimento</label>
                         <input type="date" class="form-control" id="inputAddress">
+                    </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Endereço</label>
@@ -92,6 +92,10 @@
                                 <option>...</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-5">
+                            <button type="submit" class="btn btn-dark justify-content-center">Visualizar no mapa</button>
+                        </div><br/>
+                        <br/>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Insira a foto do falecido</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1">
