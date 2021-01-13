@@ -31,20 +31,42 @@ public class CadastrarSetor extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CadastrarSetor</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CadastrarSetor at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+        try{
+                    String id = request.getParameter("id");
+                    String nome = request.getParameter("descricao");
+
+
+                    Setor setor = new Setor();
+                    setor.setDescricao(descricao);
+
+                    GenericDAO setorDAO = new SetorDAO();
+
+                    String mensagem = "";
+
+                    if(id.equals("")){
+
+                    if(setorDAO.cadastrar(setor)){
+                        mensagem = "Setor cadastrado com sucesso!";
+                    }else{
+                        mensagem = "Erro ao cadastrar Cliente!";
+                    }
+                    }else{
+                        setor.setId(Integer.parseInt(id));
+                        if(setorDAO.alterar(setor)){
+                        mensagem = "Setor alterado com sucesso!";
+                        }else{
+                        mensagem = "Erro ao alterar Cliente!";
+                        }
+                    }
+
+                    request.setAttribute("mensagem", mensagem);
+                    request.getRequestDispatcher("cadastrar-setor.jsp").forward(request, response);
+
+                }catch (Exception e){
+                    System.out.println("Erro ao cadastrar setorCTR "
+                            + e.getMessage());
+                }
+            }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

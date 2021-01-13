@@ -5,84 +5,195 @@
  */
 package br.com.cemsys.dao;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import br.com.cemsys.modelo.Setor;
+import br.com.cemsys.util.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Leonardo
  */
-@WebServlet(name = "SetorDAO", urlPatterns = {"/SetorDAO"})
-public class SetorDAO extends HttpServlet {
+public class SetorDAO implements GenericDAO{
+    
+    private Connection conn;
+    private PreparedStatement stmt;
+    private ResultSet rs;
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SetorDAO</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SetorDAO at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+    public SetorDAO() {   
+        try{
+            this.conn = ConnectionFactory.conectar();
+        }catch(Exception e){
+            System.out.println("Erro ao conectar ao BD " + e.getMessage());
         }
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+ 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    public Boolean cadastrar(Object object) throws Exception {
+        Boolean retorno = true;
+        
+        try{
+            String sql = "insert into cliente (nome, email, senha, telefone) values (?,?,?,?);";
+            Setor setor = (Setor) object;
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setString(1, setor.getNome().toUpperCase());
+
+            
+            stmt.execute();
+            
+        }catch (Exception e){
+            retorno = false;
+            System.out.println("Erro ao cadastrar clienteDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return retorno;
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    public List<Object> listar() throws Exception {
+        List<Object> lista = new ArrayList<>();
+        
+        try{
+            String sql = "select * from setor order by descricaoSetor;";
+            stmt = this.conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Setor setor = new Setor();
+                setor.setId(rs.getInt("id"));
+                setor.setDescricao(rs.getString("descricao"));
+                
+                lista.add(setor);
+            }
+            
+        }catch (Exception e){
+            System.out.println("Erro ao listar setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return lista;
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    public Object carregar(Integer id) throws Exception {
+        Setor setor = new Setor();
+        
+        try{
+            String sql = "select * from setor where id=?";
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            
+            rs = stmt.executeQuery();
+            rs.next();
+            
+            setor.setId(rs.getInt("id"));
+            setor.setDescricao(rs.getString("descricao"));
 
+            
+        }catch(Exception e){
+            System.out.println("Erro ao carregar setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return setor;
+    }
+
+    @Override
+    public Boolean alterar(Object object) throws Exception {
+        Boolean retorno = true;
+        
+        try{
+            String sql = "update setor set descricaoSetor = ? "
+                        + "where id = ?;";
+            Setor setor = (Setor) object;
+            stmt = this.conn.prepareStatement(sql);
+            
+            stmt.setString(1, setor.getDescricao().toUpperCase());
+            stmt.setInt(5, setor.getId());
+           
+            stmt.execute();
+            
+        }catch(Exception e){
+            System.out.println("Erro ao alterar setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return retorno;
+    }
+
+    @Override
+    public Boolean excluir(Integer id) throws Exception {
+        Boolean retorno = true;
+        
+        try{
+            String sql = "delete from setor where id = ?";
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setInt(1,id);
+            stmt.execute();
+            
+        }catch (Exception e){
+            retorno = false;
+            System.out.println("Erro ao excluir setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt,rs);
+        }
+        return retorno;
+    }
+    
+    public List<Object> listarPorNome(String pesquisa) throws Exception {
+        List<Object> lista = new ArrayList<>();
+        
+        try{
+            String sql = "select * from setor where nome like ? order by descricaoSetor;";
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setString(1, "%" + pesquisa.toUpperCase() + "%");
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Setor cliente = new Setor();
+                setor.setId(rs.getInt("id"));
+                setor.setDescricao(rs.getString("descricao"));
+
+                
+                lista.add(setor);
+            }
+            
+        }catch (Exception e){
+            System.out.println("Erro ao listarPorNome setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return lista;
+    }
+    
+    public List<Object> listarPorCodigo(Integer pesquisa) throws Exception {
+        List<Object> lista = new ArrayList<>();
+        
+        try{
+            String sql = "select * from setor where id = ?;";
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setInt(1, pesquisa);
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Setor setor = new Setor();
+                setor.setId(rs.getInt("id"));
+                setor.setDescricao(rs.getString("descricao"));
+                
+                lista.add(setor);
+            }
+            
+        }catch (Exception e){
+            System.out.println("Erro ao listarPorCodigo setorDAO " + e.getMessage());
+        }finally{
+            ConnectionFactory.fecharConexao(conn, stmt, rs);
+        }
+        return lista;
+        
+    }
 }
+
