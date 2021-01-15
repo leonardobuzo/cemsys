@@ -33,7 +33,7 @@ public class CadastrarSetor extends HttpServlet {
             throws ServletException, IOException {
         try{
                     String id = request.getParameter("id");
-                    String nome = request.getParameter("descricao");
+                    String descricao = request.getParameter("descricao");
 
 
                     Setor setor = new Setor();
@@ -48,7 +48,7 @@ public class CadastrarSetor extends HttpServlet {
                     if(setorDAO.cadastrar(setor)){
                         mensagem = "Setor cadastrado com sucesso!";
                     }else{
-                        mensagem = "Erro ao cadastrar Cliente!";
+                        mensagem = "Erro ao cadastrar Setor!";
                     }
                     }else{
                         setor.setId(Integer.parseInt(id));

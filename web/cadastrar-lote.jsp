@@ -72,7 +72,7 @@
                     <div class="form-group col-md-5 row justify-content-center">
                         <input value="${lote.id}" type="hidden" name="id"/>
                         <label for="inputAddress2"><strong>Novo lote</strong></label>
-                        <input type="text" name="descricao" value="${lote.descricao}" class="form-control" id="inputAddress2">
+                        <input type="text" name="descricaoLote" value="${lote.descricaoLote}" class="form-control" id="inputAddress2">
                     </div>
                     </br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

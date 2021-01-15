@@ -5,6 +5,8 @@
  */
 package br.com.cemsys.controle;
 
+import br.com.cemsys.dao.GenericDAO;
+import br.com.cemsys.dao.LoteDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,19 +33,24 @@ public class ExcluirLote extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ExcluirLote</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ExcluirLote at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try{
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            
+            GenericDAO dao = new LoteDAO();
+            String mensagem = "";
+            
+            if(dao.excluir(id)){
+                mensagem = "Lote excluído com sucesso!";
+            }else{
+                mensagem = "Erro ao excluir lote!";
+            }
+            request.setAttribute("msg", mensagem);
+            request.getRequestDispatcher("listar-lote.jsp").forward(request, response);
         }
+            
+        catch (Exception e){
+            System.out.println("Erro ao excluir loteCTR " + e.getMessage());
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

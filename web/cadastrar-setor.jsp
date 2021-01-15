@@ -56,7 +56,7 @@
                     <div class="form-group col-md-6">
                         <input value="${setor.id}" type="hidden" name="id"/>
                         <label for="inputAddress2"><strong>Novo setor</strong></label>
-                        <input type="text" name="descricao" value="${setor.descricao}" class="form-control text-uppercase">
+                        <input type="text" name="descricaoSetor" value="${setor.descricaoSetor}" class="form-control text-uppercase">
                     </div>
                     </br>
                     <button type="submit" class="btn btn-dark">Cadastrar</button>

@@ -67,36 +67,29 @@
                         <input type="submit" value="Pesquisar"/> 
                     </form>
                 </div>
-                <table class="table table-dark mr-1 ml-1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Último</th>
-                            <th scope="col">Nickname</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h3>${msg}</h3>
+                        <c:if test="${!empty setor}">
+                            <table border="1" class="table table-dark mr-1 ml-1">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Descriçaõ</th>
+                                </tr>
+                                <c:forEach items="${setor}" var="setor">
+                                    <tr>
+                                        <td>${setor.id}</td>
+                                        <td>${setor.descricaoSetor}</td>
+                                        <td><a class="btn btn-primary py-3 px-4" href="CarregarSetor?id=${setor.id}">
+                                                Alterar</a></td>
+                                        <td>
+                                            <a class="btn btn-primary py-3 px-4" onclick="if (confirm('Confirma a exclusão?')) {
+                                                        window.location.href = `ExcluirSetor?id=${setor.id}`
+                                                    }">Excluir</a>
+                                        </td>
+
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </c:if>
             </div>
         </section>
         <!-- Footer-->

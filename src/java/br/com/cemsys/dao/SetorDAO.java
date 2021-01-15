@@ -36,17 +36,17 @@ public class SetorDAO implements GenericDAO{
         Boolean retorno = true;
         
         try{
-            String sql = "insert into cliente (nome, email, senha, telefone) values (?,?,?,?);";
+            String sql = "insert into setor (descricaoSetor) values (?);";
             Setor setor = (Setor) object;
             stmt = this.conn.prepareStatement(sql);
-            stmt.setString(1, setor.getNome().toUpperCase());
+            stmt.setString(1, setor.getDescricaoSetor().toUpperCase());
 
             
             stmt.execute();
             
         }catch (Exception e){
             retorno = false;
-            System.out.println("Erro ao cadastrar clienteDAO " + e.getMessage());
+            System.out.println("Erro ao cadastrar setorDAO " + e.getMessage());
         }finally{
             ConnectionFactory.fecharConexao(conn, stmt, rs);
         }
@@ -65,7 +65,7 @@ public class SetorDAO implements GenericDAO{
             while(rs.next()){
                 Setor setor = new Setor();
                 setor.setId(rs.getInt("id"));
-                setor.setDescricao(rs.getString("descricao"));
+                setor.setDescricaoSetor(rs.getString("descricaoSetor"));
                 
                 lista.add(setor);
             }
@@ -91,7 +91,7 @@ public class SetorDAO implements GenericDAO{
             rs.next();
             
             setor.setId(rs.getInt("id"));
-            setor.setDescricao(rs.getString("descricao"));
+            setor.setDescricaoSetor(rs.getString("descricaoSetor"));
 
             
         }catch(Exception e){
@@ -154,9 +154,9 @@ public class SetorDAO implements GenericDAO{
             rs = stmt.executeQuery();
             
             while(rs.next()){
-                Setor cliente = new Setor();
+                Setor setor = new Setor();
                 setor.setId(rs.getInt("id"));
-                setor.setDescricao(rs.getString("descricao"));
+                setor.setDescricaoSetor(rs.getString("descricaoSetor"));
 
                 
                 lista.add(setor);
@@ -182,7 +182,7 @@ public class SetorDAO implements GenericDAO{
             while(rs.next()){
                 Setor setor = new Setor();
                 setor.setId(rs.getInt("id"));
-                setor.setDescricao(rs.getString("descricao"));
+                setor.setDescricaoSetor(rs.getString("descricaoSetor"));
                 
                 lista.add(setor);
             }

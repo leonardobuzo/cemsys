@@ -67,25 +67,29 @@
                         <input type="submit" value="Pesquisar"/> 
                     </form>
                 </div>
-                <table class="table table-dark mr-1 ml-1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Último</th>
-                            <th scope="col">Nickname</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <th><a class="btn btn-primary py-2 px-2" href=""><span class="glyphicon glyphicon-pencil" aria-hidden="false">Alterar</span></a>
-                                <a class="btn btn-primary py-2 px-2" href=""><span class="glyphicon glyphicon-trash" aria-hidden="false">Excluir</span></a></th>
-                        </tr>
-                    </tbody>
-                </table>
+                <h3>${msg}</h3>
+                    <c:if test="${!empty lote}">
+                        <table border="1" class="table table-dark mr-1 ml-1">
+                            <tr>
+                                <th>Id</th>
+                                <th>Descrição</th>
+                            </tr>
+                            <c:forEach items="${lote}" var="lote">
+                                <tr>
+                                    <td>${setor.id}</td>
+                                    <td>${setor.descricaoLote}</td>
+                                    <td><a class="btn btn-primary py-3 px-4" href="CarregarLote?id=${lote.id}">
+                                            Alterar</a></td>
+                                    <td>
+                                        <a class="btn btn-primary py-3 px-4" onclick="if (confirm('Confirma a exclusão?')) {
+                                                    window.location.href = `ExcluirLote?id=${lote.id}`
+                                                }">Excluir</a>
+                                    </td>
+
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </c:if>
             </div>
         </section>
         <!-- Footer-->

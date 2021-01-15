@@ -64,7 +64,7 @@
                         <div class="form-group col-md-5">
                             <input value="${quadra.id}" type="hidden" name="id"/>
                             <label for="inputAddress2"><strong>Nova quadra</strong></label>
-                            <input type="text" name="descricao" value="${quadra.descricao}" class="form-control text-uppercase">
+                            <input type="text" name="descricaoQuadra" value="${quadra.descricaoQuadra}" class="form-control text-uppercase">
                         </div>
                     </div></br>
                     </br>

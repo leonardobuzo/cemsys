@@ -5,6 +5,7 @@
  */
 package br.com.cemsys.controle;
 
+import br.com.cemsys.dao.QuadraDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,20 +30,28 @@ public class ListarQuadra extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ListarQuadra</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ListarQuadra at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try{
+            String tipo = request.getParameter("tipo");
+            String pesquisa = request.getParameter("pesquisa");
+            
+            QuadraDAO dao = new QuadraDAO();
+            
+            if(pesquisa.equals("")){
+                request.setAttribute("quadra", dao.listar());
+            }else{
+                
+                if(tipo.equals("descricao")){
+                   request.setAttribute("quadra", dao.listarPorNome(pesquisa)); 
+                }else{
+                    request.setAttribute("quadra", dao.listarPorCodigo(Integer.parseInt(pesquisa)));
+                }                
+            }
+            request.getRequestDispatcher("listar-quadra.jsp").forward(request, response);
+            
+        }catch(Exception e){
+            System.out.println("Erro ao listar quadraCTR " + e.getMessage());
         }
     }
 

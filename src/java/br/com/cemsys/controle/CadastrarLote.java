@@ -29,22 +29,44 @@ public class CadastrarLote extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CadastrarLote</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CadastrarLote at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+        try{
+                    String id = request.getParameter("id");
+                    String descricaoLote = request.getParameter("descricaoLote");
+
+
+                    Lote lote = new Lote();
+                    lote.setDescricaoLote(descricaoLote);
+
+                    GenericDAO LoteDAO = new LoteDAO();
+
+                    String mensagem = "";
+
+                    if(id.equals("")){
+
+                    if(loteDAO.cadastrar(lote)){
+                        mensagem = "Lote cadastrado com sucesso!";
+                    }else{
+                        mensagem = "Erro ao cadastrar Lote!";
+                    }
+                    }else{
+                        lote.setId(Integer.parseInt(id));
+                        if(loteDAO.alterar(lote)){
+                        mensagem = "Lote alterado com sucesso!";
+                        }else{
+                        mensagem = "Erro ao alterar Lote!";
+                        }
+                    }
+
+                    request.setAttribute("mensagem", mensagem);
+                    request.getRequestDispatcher("cadastrar-lote.jsp").forward(request, response);
+
+                }catch (Exception e){
+                    System.out.println("Erro ao cadastrar loteCTR "
+                            + e.getMessage());
+                }
+            }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
