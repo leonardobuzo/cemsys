@@ -37,5 +37,11 @@ create table Lote (
 	)
 
 
-
-
+create table Cemiterio (
+    idCemiterio int identity (1,1),
+    nomeCemiterio varchar (30)not null,
+    enderecoCemiterio varchar (100) not null,
+    horario varchar (20) not null,
+    mapa varbinary(max) not null,
+    constraint pk_Cemiterio primary key (idCemiterio)
+)
